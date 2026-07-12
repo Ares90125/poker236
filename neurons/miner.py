@@ -37,10 +37,7 @@ class Miner(BaseMinerNeuron):
             Path(__file__).resolve(),
             repo_root / "poker44_model" / "__init__.py",
             repo_root / "poker44_model" / "detector.py",
-            repo_root / "poker44_model" / "rankmag_features.py",
-            repo_root / "poker44_model" / "union_features.py",
-            repo_root / "poker44_model" / "features_v2.py",
-            repo_root / "poker44_model" / "base_features.py",
+            repo_root / "poker44_model" / "features.py",
             repo_root / "poker44_model" / "model.joblib",
             repo_root / "poker44_model" / "capture.py",
         ]
@@ -52,12 +49,12 @@ class Miner(BaseMinerNeuron):
             repo_root=repo_root,
             implementation_files=implementation_files,
             defaults={
-                "model_name": "poker236-rankmag",
-                "model_version": "2",
-                "framework": "lightgbm+sklearn-ensemble",
+                "model_name": "poker236-best",
+                "model_version": "3",
+                "framework": "lightgbm",
                 "license": "MIT",
                 "repo_url": "",
-                "notes": "Within-batch rank-fused ensemble (stacked GBDT / sign-stable monotone GBDT / PCA-MLP) over the transfer-stable union features plus within-batch percentile-rank encodings of bet/pot/stack magnitude columns (poker44_model/).",
+                "notes": "Gradient-boosted-trees (LightGBM + isotonic + reward-fit FPR-capped calibration) bot detector over 180 sanitization-invariant behavioral features (poker44_model/).",
                 "open_source": True,
                 "inference_mode": "remote",
                 "training_data_statement": (
