@@ -54,7 +54,7 @@ class Miner(BaseMinerNeuron):
                 "framework": "lightgbm+sklearn-ensemble",
                 "license": "MIT",
                 "repo_url": "",
-                "notes": "Gradient-boosted-trees (LightGBM + isotonic + reward-fit FPR-capped calibration) bot detector over 180 sanitization-invariant behavioral features (poker44_model/).",
+                "notes": "Gradient-boosted-trees bot detector over 180 sanitization-invariant behavioral features (poker44_model/); strictly-monotone reward-fit decision layer, deterministic top-10% crossing, no isotonic calibration.",
                 "open_source": True,
                 "inference_mode": "remote",
                 "training_data_statement": (

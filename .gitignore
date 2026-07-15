@@ -223,3 +223,8 @@ captures/
 logs/
 *.log
 __pycache__/
+**/__pycache__/
+*.pyc
+_bench_cache.npz
+*_cache.npz
+_train.log
